@@ -10,7 +10,7 @@ def task_create(request):
     if request.method == 'POST':
         title = request.POST.get('title', '').strip()
         description = request.POST.get('description', '').strip()
-        if title:  # simple validation
+        if title:  
             Task.objects.create(title=title, description=description)
             return redirect('todo:task_list')
         error = "Title is required."
